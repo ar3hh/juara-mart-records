@@ -1,0 +1,43 @@
+:root{--bg:#000;--card:#141615;--card2:#1b1e1d;--edge:#262a28;--ink:#f4f6f5;--mute:#8f9a96;--em:#10b981;--em2:#34d399;--warn:#f5b942;--bad:#f87171}
+*{box-sizing:border-box;margin:0}
+html,body{background:var(--bg);color:var(--ink);font:16px/1.4 -apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text",system-ui,sans-serif;-webkit-text-size-adjust:100%}
+body{min-height:100vh;padding:env(safe-area-inset-top) 0 calc(84px + env(safe-area-inset-bottom))}
+header{background:var(--bg);padding:16px 16px 4px}
+#logo{display:block;margin:0 auto;width:min(86vw,400px);height:auto;border:0;background:none}
+main{max-width:560px;margin:0 auto;padding:10px 16px;display:grid;gap:12px}
+.tab{display:grid;gap:12px}.tab[hidden]{display:none}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.card{background:var(--card);border:1px solid var(--edge);border-radius:20px;padding:16px 18px;display:grid;gap:6px;align-content:start}
+.lbl{color:var(--mute);font-size:.82rem;font-weight:500;letter-spacing:.02em}
+.card small,.note{color:var(--mute);font-size:.84rem}
+.card strong{font-size:1.55rem;font-weight:650;letter-spacing:-.01em;font-variant-numeric:tabular-nums}
+.em{color:var(--em2)}.neg{color:var(--bad)!important}
+.hero{padding:24px 20px;background:radial-gradient(120% 140% at 0% 0%,#0c3a2b 0%,var(--card) 62%);border-color:#1b4a39}
+.hero strong{font-size:2.9rem;color:var(--em2);line-height:1.05}
+.datebar{display:grid;grid-template-columns:48px 1fr 48px;gap:8px;align-items:stretch}
+.step{border:1px solid var(--edge);background:var(--card);color:var(--ink);border-radius:16px;font-size:1.6rem;min-height:56px}
+.step:active{background:var(--card2)}
+.dateval{position:relative;display:grid;place-items:center;text-align:center;background:var(--card);border:1px solid var(--edge);border-radius:16px;min-height:56px;padding:6px 10px}
+.dateval span{font-weight:600}.dateval small{color:var(--em2);font-size:.75rem}
+.dateval input{position:absolute;inset:0;opacity:0;width:100%;height:100%;font-size:16px}
+h2{font-size:1.05rem;font-weight:650}
+.calc{display:flex;justify-content:space-between;font-variant-numeric:tabular-nums;font-size:.95rem}
+.calc.sub{color:var(--em2)}.calc.total{border-top:1px solid var(--edge);padding-top:8px;margin-top:2px;font-weight:650}
+.form{gap:10px}.form label{display:grid;gap:5px;color:var(--mute);font-size:.84rem}
+input:not([type=date]),textarea{width:100%;background:#0b0c0c;color:var(--ink);border:1px solid var(--edge);border-radius:14px;padding:13px 14px;font:inherit;font-size:16px;min-height:50px}
+input:focus,textarea:focus{outline:2px solid var(--em);border-color:transparent}
+.btn{width:100%;min-height:52px;border:0;border-radius:15px;background:var(--em);color:#00130c;font:650 1rem inherit;font-family:inherit}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--edge);margin-top:8px}
+.btn.danger{background:transparent;color:var(--bad);border:1px solid #4a2222}
+.btn:active{opacity:.7}.btn:disabled{opacity:.5}
+.banner{padding:11px 14px;border-radius:14px;background:#0d2a21;color:var(--em2);font-size:.9rem}
+.banner.warn{background:#2e2410;color:var(--warn)}
+.hrow{display:grid;grid-template-columns:1fr auto;gap:2px 12px;padding:12px 0;border-top:1px solid var(--edge);width:100%;background:none;border-left:0;border-right:0;border-bottom:0;color:var(--ink);text-align:left;font:inherit}
+.hrow.on{color:var(--em2)}.hrow small{color:var(--mute)}.hrow b{text-align:right;font-variant-numeric:tabular-nums}
+#msg{font-size:.92rem}#msg.ok{color:var(--em2)}#msg.err{color:var(--bad)}
+#toast{position:fixed;left:16px;right:16px;bottom:calc(88px + env(safe-area-inset-bottom));max-width:528px;margin:auto;padding:13px 16px;border-radius:14px;background:#0d2a21;color:var(--em2);font-weight:550;opacity:0;pointer-events:none;transition:opacity .2s}
+#toast.show{opacity:1}#toast.err{background:#341616;color:var(--bad)}
+nav{position:fixed;left:0;right:0;bottom:0;display:grid;grid-template-columns:repeat(4,1fr);gap:4px;background:#0a0b0b;border-top:1px solid var(--edge);padding:6px 8px calc(6px + env(safe-area-inset-bottom))}
+nav button{min-height:50px;background:none;border:0;border-radius:13px;color:var(--mute);font:550 .85rem inherit;font-family:inherit}
+nav button[aria-current="true"]{color:var(--em2);background:#0f1f19}
+@media (min-width:700px){.hero strong{font-size:3.2rem}}
