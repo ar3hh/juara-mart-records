@@ -8,3 +8,4 @@ const Calc={
  todayISO:()=>new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Kuala_Lumpur'}).format(new Date()),
  longDate(){const p=Object.fromEntries(new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Kuala_Lumpur',weekday:'long',day:'numeric',month:'long',year:'numeric'}).formatToParts(new Date()).map(x=>[x.type,x.value]));return `${p.weekday}, ${p.day} ${p.month} ${p.year}`}
 };
+Update calc.js Phase 2 V3
